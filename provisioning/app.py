@@ -1,3 +1,4 @@
+import json
 from flask import Flask
 
 
@@ -5,6 +6,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
+    mailboxes = ["a@mail.com", "b@mail.com"]
+    with open('/code/shared/mailboxes.json', 'w') as outfile:
+        json.dump(mailboxes, outfile)
+
     return 'Provisioning'
 
 

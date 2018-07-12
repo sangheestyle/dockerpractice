@@ -15,5 +15,10 @@ services:
       - shared:/code/shared
     ports:
       - "8000:8000"
+  scanning:
+    image: 127.0.0.1:5000/scanning
+    build: ./scanning
+    volumes:
+      - shared:/usr/src/app/shared
 volumes:
   shared: 
